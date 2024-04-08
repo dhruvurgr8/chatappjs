@@ -10,7 +10,7 @@ const io = new Server(server, {
 }); // Initialize Socket.io server
 
 // Serve static files from "public" directory
-app.use(express.static(join(__dirname, "public")));
+app.use(express.static(join(__dirname, "docs")));
 
 // Socket.io connection handling
 io.on("connection", (socket) => {
