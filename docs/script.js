@@ -8,7 +8,14 @@ const chatContainer = document.querySelector(".chat-container");
 const greetUser = document.querySelector(".greet-user");
 let username = localStorage.getItem("username");
 const userStatus = document.querySelector(".user-status");
+const logoutBtn = document.querySelector(".logout-btn");
 // const typingIndicator = document.getElementById("typingIndicator");
+
+//add logout btn
+logoutBtn.addEventListener("click", () => {
+  localStorage.removeItem("username");
+  location.reload();
+});
 
 // Display chat page to user when he enters the username
 function displayChatPage() {
