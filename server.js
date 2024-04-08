@@ -9,14 +9,21 @@ const io = new Server(server, {
   connectionStateRecovery: {}, // this will give messages on being disconnected.
 }); // Initialize Socket.io server
 
+// Serve static files from "public" directory
+app.use(express.static(join(__dirname, "public")));
+
 // Socket.io connection handling
 io.on("connection", (socket) => {
   console.log(`user connected`);
-  // recieving message
-  socket.on("message", (message) => {
-    console.log("message:-", message);
-    // socket.broadcast.emit('hi');
-    io.emit("message", message); // io.emit broadcast message to everyone
+  // adding the typing functionality
+  //   socket.on("typing", () => {
+  //     io.emit("typing", socket.id);
+  //   });
+
+  // receiving message
+  socket.on("message", (data) => {
+    console.log("message:-", data);
+    io.emit("message", data); // io.emit broadcasts message to everyone
   });
 });
 
@@ -25,11 +32,9 @@ app.get("/", (req, res) => {
   res.sendFile(join(__dirname, "index.html"));
 });
 
-// Middleware to serve static files
-app.use(express.static(join(__dirname, "public"))); // Serve static files from "public" directory
-
-server.listen(3000, () => {
-  console.log("server running at http://localhost:3000");
+const PORT = process.env.PORT || 3000;
+server.listen(PORT, () => {
+  console.log(`Server running at http://localhost:${PORT}`);
 });
 
 // this is the final code

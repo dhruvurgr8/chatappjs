@@ -1,0 +1,110 @@
+/* Container for the chat */
+.user-container {
+  border: 2px solid #e7e7e7;
+  width: 500px;
+  padding: 10px;
+  height: 200px;
+  margin: auto auto;
+}
+.greet-user {
+  margin: 0px;
+}
+.greet-user-div {
+  margin-bottom: 5px;
+  border-bottom: 1px solid #e7e7e7;
+}
+.user-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.user-form input {
+  padding: 8px 5px;
+  width: 95%;
+  border-radius: 5px;
+  border: 1px solid #e7e7e7;
+}
+.user-form button {
+  width: 97%;
+  padding: 8px 5px;
+  cursor: pointer;
+  background-color: green;
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+}
+.chat-container {
+  width: 100%;
+  max-width: 600px;
+  height: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  box-sizing: border-box;
+  border: 1.5px solid #e7e7e7;
+  border-radius: 10px;
+  /* height: 500px; */
+  display: none; /* Add flexbox */
+  flex-direction: column; /* Stack items vertically */
+}
+
+/* Style for the messages list */
+#messages {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  flex-grow: 1; /* Allow messages to grow */
+  overflow-y: auto; /* Enable vertical scrolling */
+}
+
+/* Style for each individual message */
+.message {
+  background-color: #f2f2f2;
+  border-radius: 5px;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+/* Style for the input container */
+.input-container {
+  display: flex; /* Use flexbox for input and button */
+}
+
+/* Style for the input field */
+#input {
+  flex: 1; /* Take up remaining space */
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 80%;
+}
+
+/* Style for the send button */
+.btn {
+  width: 15%;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: #4caf50;
+  color: white;
+  cursor: pointer;
+}
+
+/* Style for the send button on hover */
+.btn:hover {
+  background-color: #45a049;
+}
+
+.user-messages {
+  margin-bottom: 5px;
+}
+
+.connected-username {
+  font-weight: bold;
+  color: #007bff; /* blue color */
+}
+
+.sent-message {
+  margin-left: 5px; /* Add some space between username and message */
+  color: #333; /* darker color for message */
+}

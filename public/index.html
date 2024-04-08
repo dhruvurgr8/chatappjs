@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="styles.css" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <title>Socket.IO chat</title>
+    <style></style>
+  </head>
+  <body>
+    <div class="user-container">
+      <h2>User Registeration</h2>
+      <span class="user-status"></span>
+      <form class="user-form">
+        <input name="username" type="text" placeholder="Enter username..." />
+        <button type="submit" class="login">LogIn</button>
+      </form>
+    </div>
+    <div class="chat-container">
+      <div class="typing-indicator" id="typingIndicator"></div>
+      <div class="greet-user-div">
+        <h1 class="greet-user"></h1>
+      </div>
+      <ul id="messages"></ul>
+      <form id="form" action="">
+        <input
+          name="message"
+          id="input"
+          autocomplete="off"
+          placeholder="Type your message..."
+        />
+        <button class="btn" type="submit">Send</button>
+      </form>
+    </div>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
+
+<!-- This is the final code  -->
