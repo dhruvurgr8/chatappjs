@@ -49,11 +49,24 @@ form.addEventListener("submit", (e) => {
   }
 });
 // Recieving messages from the server
+// Recieving messages from the server
 socket.on("message", (data) => {
   const item = document.createElement("li");
-  item.innerHTML = `<div class="user-messages">
-    <span class="connected-username">${data.username} :</sapn> <span class="sent-message">${data.message}</sapn>
-  </div>`;
+  const messageContainer = document.createElement("div");
+
+  // Check if the message is from the current user
+  if (data.username === username) {
+    messageContainer.classList.add("user-message");
+  } else {
+    messageContainer.classList.add("other-message");
+  }
+
+  messageContainer.innerHTML = `
+    <span class="username">${data.username}</span>:
+    <span class="message">${data.message}</span>
+  `;
+
+  item.appendChild(messageContainer);
   messages.appendChild(item);
   window.scrollTo(0, document.body.scrollHeight);
 });

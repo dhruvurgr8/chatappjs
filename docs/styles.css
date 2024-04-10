@@ -6,15 +6,18 @@
   height: 200px;
   margin: auto auto;
 }
+
 .greet-user {
   margin: 0px;
 }
+
 .greet-user-div {
   margin-bottom: 5px;
   border-bottom: 1px solid #e7e7e7;
   display: flex;
   justify-content: space-between;
 }
+
 .greet-user-div button {
   width: 15%;
   padding: 10px;
@@ -24,17 +27,20 @@
   color: white;
   cursor: pointer;
 }
+
 .user-form {
   display: flex;
   flex-direction: column;
   gap: 20px;
 }
+
 .user-form input {
   padding: 8px 5px;
   width: 95%;
   border-radius: 5px;
   border: 1px solid #e7e7e7;
 }
+
 .user-form button {
   width: 97%;
   padding: 8px 5px;
@@ -45,6 +51,7 @@
   border: none;
   border-radius: 5px;
 }
+
 .chat-container {
   width: 100%;
   max-width: 600px;
@@ -54,9 +61,8 @@
   box-sizing: border-box;
   border: 1.5px solid #e7e7e7;
   border-radius: 10px;
-  /* height: 500px; */
-  display: none; /* Add flexbox */
-  flex-direction: column; /* Stack items vertically */
+  display: none;
+  flex-direction: column;
 }
 
 /* Style for the messages list */
@@ -64,26 +70,57 @@
   list-style-type: none;
   margin: 0;
   padding: 0;
-  flex-grow: 1; /* Allow messages to grow */
-  overflow-y: auto; /* Enable vertical scrolling */
+  flex-grow: 1;
+  overflow-y: auto;
 }
 
 /* Style for each individual message */
-.message {
+.message-container {
   background-color: #f2f2f2;
   border-radius: 5px;
   padding: 10px;
   margin-bottom: 10px;
 }
 
+/* Style for the username */
+.username {
+  font-weight: bold;
+}
+
+/* Style for the message content */
+.message {
+  margin-top: 4px;
+}
+
+/* Box shadow to give a lift to the message container */
+.message-container {
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+/* Style for the user's message */
+.user-message {
+  text-align: left;
+  margin-left: auto;
+  margin-bottom: 5px;
+  color: blue;
+}
+
+/* Style for other users' messages */
+.other-message {
+  text-align: right;
+  margin-right: auto;
+  margin-bottom: 5px;
+  color: green;
+}
+
 /* Style for the input container */
 .input-container {
-  display: flex; /* Use flexbox for input and button */
+  display: flex;
 }
 
 /* Style for the input field */
 #input {
-  flex: 1; /* Take up remaining space */
+  flex: 1;
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 5px;
@@ -112,12 +149,12 @@
 
 .connected-username {
   font-weight: bold;
-  color: #007bff; /* blue color */
+  color: #007bff;
 }
 
 .sent-message {
-  margin-left: 5px; /* Add some space between username and message */
-  color: #333; /* darker color for message */
+  margin-left: 5px;
+  color: #333;
 }
 
 @media screen and (max-width: 600px) {
@@ -125,7 +162,7 @@
     display: flex;
     gap: 5px;
   }
-  .chat-container {
-    height: 500px;
-  }
+}
+.message {
+  color: black !important;
 }
